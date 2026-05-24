@@ -8,11 +8,51 @@
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
+    /* Base gradient — sits behind every other layer */
+    background:
+      linear-gradient(180deg, #0f172a 0%, #0d1424 45%, #0a0f1c 100%);
+    min-height: 100%;
   }
 
   body {
-    @apply font-sans bg-slate-950 text-slate-200;
+    @apply font-sans text-slate-200;
+    position: relative;
+    min-height: 100vh;
+    background: transparent;
     font-feature-settings: 'ss01', 'cv11';
+  }
+
+  /* Soft blurred glow spots in corners — fixed so they stay put while scrolling.
+     Cool tones only; no flashy color. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(55% 45% at 0% 0%, rgba(30, 58, 138, 0.18), transparent 65%),
+      radial-gradient(45% 40% at 100% 0%, rgba(30, 41, 59, 0.35), transparent 60%),
+      radial-gradient(50% 50% at 100% 100%, rgba(14, 116, 144, 0.10), transparent 70%);
+  }
+
+  /* Subtle noise texture overlay — SVG fractal noise baked as data URL.
+     Kept at ~4% opacity so it adds grain without becoming visible texture. */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    mix-blend-mode: overlay;
+  }
+
+  /* Content sits above the background layers */
+  #root {
+    position: relative;
+    z-index: 1;
   }
 
   ::selection {
@@ -25,7 +65,7 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #020617;
+    background: #0a0f1c;
   }
   ::-webkit-scrollbar-thumb {
     background: #1f2937;
