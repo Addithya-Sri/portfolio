@@ -344,7 +344,7 @@ export default function Portfolio() {
           height: 800px;
           background: radial-gradient(circle, rgba(95, 217, 203, 0.10), transparent 70%);
           pointer-events: none;
-          z-index: 0;
+          z-index: -1;
         }
 
         @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
@@ -413,8 +413,9 @@ export default function Portfolio() {
         <section
           id="hero"
           ref={setRef('hero')}
-          className="bg-glow min-h-screen flex flex-col justify-center px-6 sm:px-12 py-24 max-w-5xl mx-auto"
+          className="relative min-h-screen flex flex-col justify-center px-6 sm:px-12 py-24 max-w-5xl mx-auto"
         >
+          <div className="bg-glow" aria-hidden="true" />
           <div className="font-term text-xs sm:text-sm mb-6 flex items-center gap-2 flex-wrap" style={{ color: 'var(--accent-cyan)' }}>
             <span className="inline-block w-2 h-2 rounded-full status-dot" style={{ backgroundColor: 'var(--accent-cyan)' }} />
             <span>SYSTEM OPERATIONAL</span>
