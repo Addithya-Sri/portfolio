@@ -18,14 +18,14 @@ const PROFILE = {
 };
 
 const BOOT_LINES = [
-  '[ OK ] Mounting /home/alex...',
+  '[ OK ] Mounting /home/sri...',
   '[ OK ] Starting network-online.target',
   '[ OK ] Starting docker.service',
   '[ OK ] Starting kubelet.service',
   '[ OK ] Reached target cloud-infrastructure.target',
   '[ OK ] Starting portfolio.service',
   '',
-  'alex-rivera login: visitor',
+  'sri-adithya login: visitor',
   'Last login: Mon Jun 15 09:14:02 from 10.0.0.4',
 ];
 
@@ -201,7 +201,7 @@ function SectionHeader({ num, path, cmd }) {
       <span className="px-1.5 py-0.5 rounded" style={{ backgroundColor: 'var(--bg-elevated)', color: 'var(--accent-cyan)' }}>
         {num}
       </span>
-      <span style={{ color: 'var(--accent-cyan)' }}>alex@portfolio</span>
+      <span style={{ color: 'var(--accent-cyan)' }}>sri@portfolio</span>
       <span>:</span>
       <span style={{ color: 'var(--accent-amber)' }}>{path}</span>
       <span>$</span>
@@ -637,7 +637,7 @@ export default function Portfolio() {
       {/* tmux-style status bar / navigation */}
       <div className="fixed bottom-0 left-0 right-0 z-20 tmux-bar font-term text-xs sm:text-sm">
         <div className="flex items-center justify-between gap-3 px-3 sm:px-6 h-10 max-w-6xl mx-auto">
-          <span className="hidden sm:inline shrink-0" style={{ color: 'var(--accent-cyan)' }}>[alex@portfolio]</span>
+          <span className="hidden sm:inline shrink-0" style={{ color: 'var(--accent-cyan)' }}>[sri@portfolio]</span>
           <div className="flex items-center gap-1 overflow-x-auto no-scrollbar">
             {NAV_ITEMS.map((item) => (
               <button
