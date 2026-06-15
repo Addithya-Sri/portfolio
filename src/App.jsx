@@ -6,7 +6,7 @@ import { Github, Linkedin, Mail, ArrowUpRight, Download } from 'lucide-react';
 /* ------------------------------------------------------------------ */
 
 const PROFILE = {
-  name: 'Alex Rivera',
+  name: 'Sri Adithya Sridhar',
   role: 'Cloud & DevOps Engineer',
   tagline:
     "Infrastructure that doesn't page anyone at 3am. AWS, Kubernetes and Terraform, wired together with CI/CD and a healthy fear of manual steps.",
