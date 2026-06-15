@@ -477,7 +477,7 @@ export default function Portfolio() {
           {/* Profile image */}
           <div className="shrink-0 mx-auto lg:mx-0">
             <div
-              className="relative rounded-lg overflow-hidden border w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80"
+              className="relative rounded-lg overflow-hidden border w-72 h-72 sm:w-96 sm:h-96 lg:w-[26rem] lg:h-[26rem]"
               style={{ borderColor: 'var(--border-subtle)' }}
             >
               <img
@@ -486,13 +486,6 @@ export default function Portfolio() {
                 className="w-full h-full object-cover"
                 loading="eager"
               />
-              <div
-                className="absolute bottom-0 left-0 right-0 px-3 py-1.5 font-term text-xs flex items-center gap-2"
-                style={{ backgroundColor: 'rgba(13,17,23,0.78)', color: 'var(--text-muted)', borderTop: '1px solid var(--border-subtle)' }}
-              >
-                <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--accent-cyan)' }} />
-                <span style={{ color: 'var(--accent-cyan)' }}>~/</span>profile.jpg
-              </div>
             </div>
           </div>
           </div>
