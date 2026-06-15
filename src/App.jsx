@@ -10,10 +10,10 @@ const PROFILE = {
   role: 'Cloud & DevOps Engineer',
   tagline:
     "Infrastructure that doesn't page anyone at 3am. AWS, Kubernetes and Terraform, wired together with CI/CD and a healthy fear of manual steps.",
-  location: 'Berlin, Germany (UTC+1)',
-  email: 'hello@alexrivera.dev',
-  github: 'https://github.com/yourusername',
-  linkedin: 'https://linkedin.com/in/yourusername',
+  location: 'Neckarsulm, Germany (UTC+1)',
+  email: 'sridharsriadithya@gmail.com',
+  github: 'https://github.com/Addithya-Sri',
+  linkedin: 'www.linkedin.com/in/sri-adithya',
   resume: '#',
 };
 
