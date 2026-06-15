@@ -416,6 +416,8 @@ export default function Portfolio() {
           className="relative min-h-screen flex flex-col justify-center px-6 sm:px-12 py-24 max-w-5xl mx-auto"
         >
           <div className="bg-glow" aria-hidden="true" />
+          <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16 w-full">
+          <div className="flex-1 min-w-0">
           <div className="font-term text-xs sm:text-sm mb-6 flex items-center gap-2 flex-wrap" style={{ color: 'var(--accent-cyan)' }}>
             <span className="inline-block w-2 h-2 rounded-full status-dot" style={{ backgroundColor: 'var(--accent-cyan)' }} />
             <span>SYSTEM OPERATIONAL</span>
@@ -469,6 +471,30 @@ export default function Portfolio() {
                 </a>
               );
             })}
+          </div>
+          </div>
+
+          {/* Profile image */}
+          <div className="shrink-0 mx-auto lg:mx-0">
+            <div
+              className="relative rounded-lg overflow-hidden border w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80"
+              style={{ borderColor: 'var(--border-subtle)' }}
+            >
+              <img
+                src="/profile.jpg"
+                alt={PROFILE.name}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+              <div
+                className="absolute bottom-0 left-0 right-0 px-3 py-1.5 font-term text-xs flex items-center gap-2"
+                style={{ backgroundColor: 'rgba(13,17,23,0.78)', color: 'var(--text-muted)', borderTop: '1px solid var(--border-subtle)' }}
+              >
+                <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--accent-cyan)' }} />
+                <span style={{ color: 'var(--accent-cyan)' }}>~/</span>profile.jpg
+              </div>
+            </div>
+          </div>
           </div>
         </section>
 
