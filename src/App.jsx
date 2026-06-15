@@ -13,7 +13,7 @@ const PROFILE = {
   location: 'Neckarsulm, Germany (UTC+1)',
   email: 'sridharsriadithya@gmail.com',
   github: 'https://github.com/Addithya-Sri',
-  linkedin: 'www.linkedin.com/in/sri-adithya',
+  linkedin: 'https://www.linkedin.com/in/sri-adithya/',
   resume: '#',
 };
 
