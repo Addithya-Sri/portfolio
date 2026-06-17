@@ -441,7 +441,7 @@ export default function Portfolio() {
             {PROFILE.role}
           </p>
 
-          <p className="text-base sm:text-lg max-w-xl mb-10" style={{ color: 'var(--text-muted)' }}>
+          <p className="text-lg sm:text-xl max-w-xl mb-10 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             {PROFILE.tagline}
           </p>
 
@@ -499,23 +499,23 @@ export default function Portfolio() {
         {/* About */}
         <section id="about" ref={setRef('about')} className="px-6 sm:px-12 py-20 max-w-5xl mx-auto">
           <SectionHeader num="01" path="~/about" cmd="cat README.md" />
-          <div className="font-term text-sm sm:text-base leading-relaxed space-y-5 max-w-2xl">
-            <h2 className="text-lg sm:text-xl font-semibold" style={{ color: 'var(--accent-cyan)' }}># whoami</h2>
-            <p style={{ color: 'var(--text-muted)' }}>
+          <div className="font-term text-base sm:text-lg leading-relaxed space-y-5 max-w-2xl">
+            <h2 className="text-xl sm:text-2xl font-semibold" style={{ color: 'var(--accent-cyan)' }}># whoami</h2>
+            <p style={{ color: 'var(--text-secondary)' }}>
               Cloud and DevOps engineer who likes systems that fail loudly in staging and quietly — or not at all —
               in production. Over the last 5 years I've worked across AWS and Kubernetes, building the pipelines
               and platforms that let teams ship without holding their breath.
             </p>
 
-            <h2 className="text-lg sm:text-xl font-semibold pt-2" style={{ color: 'var(--accent-cyan)' }}># currently</h2>
-            <ul className="space-y-1.5" style={{ color: 'var(--text-muted)' }}>
+            <h2 className="text-xl sm:text-2xl font-semibold pt-2" style={{ color: 'var(--accent-cyan)' }}># currently</h2>
+            <ul className="space-y-2" style={{ color: 'var(--text-secondary)' }}>
               <li className="flex gap-2"><span style={{ color: 'var(--accent-amber)' }}>-</span>Migrating a fleet of services from EC2 to EKS</li>
               <li className="flex gap-2"><span style={{ color: 'var(--accent-amber)' }}>-</span>Building reusable GitHub Actions workflows for the team</li>
               <li className="flex gap-2"><span style={{ color: 'var(--accent-amber)' }}>-</span>Turning manual runbook steps into code, one at a time</li>
             </ul>
 
-            <h2 className="text-lg sm:text-xl font-semibold pt-2" style={{ color: 'var(--accent-cyan)' }}># based_in</h2>
-            <p style={{ color: 'var(--text-muted)' }}>{PROFILE.location} — open to remote work</p>
+            <h2 className="text-xl sm:text-2xl font-semibold pt-2" style={{ color: 'var(--accent-cyan)' }}># based_in</h2>
+            <p style={{ color: 'var(--text-secondary)' }}>{PROFILE.location} — open to remote work</p>
           </div>
         </section>
 
