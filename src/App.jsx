@@ -36,11 +36,11 @@ const BOOT_LINES = [
 const NAV_ITEMS = [
   { id: 'hero', label: '~', num: 0 },
   { id: 'about', label: 'about', num: 1 },
-  { id: 'skills', label: 'skills', num: 2 },
-  { id: 'projects', label: 'projects', num: 3 },
-  { id: 'experience', label: 'experience', num: 4 },
-  { id: 'education', label: 'education', num: 5 },
-  { id: 'certs', label: 'certs', num: 6 },
+  { id: 'experience', label: 'experience', num: 2 },
+  { id: 'certs', label: 'certs', num: 3 },
+  { id: 'education', label: 'education', num: 4 },
+  { id: 'skills', label: 'skills', num: 5 },
+  { id: 'projects', label: 'projects', num: 6 },
   { id: 'contact', label: 'contact', num: 7 },
 ];
 
@@ -539,61 +539,9 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Skills */}
-        <section id="skills" ref={setRef('skills')} className="px-6 sm:px-12 py-20 max-w-5xl mx-auto">
-          <SectionHeader num="02" path="~/skills" cmd="htop --filter=stack" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {SKILL_GROUPS.map((group) => (
-              <div key={group.title} className="rounded-lg p-5 border" style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
-                <p className="font-term text-xs mb-4" style={{ color: 'var(--text-muted)' }}># {group.title}</p>
-                <div className="space-y-3">
-                  {group.skills.map((skill) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between text-sm mb-1.5 font-term">
-                        <span>{skill.name}</span>
-                        <span style={{ color: 'var(--text-muted)' }}>{skill.level}%</span>
-                      </div>
-                      <div className="h-1.5 rounded-full skill-bar-track">
-                        <div className="h-1.5 rounded-full skill-bar-fill" style={{ width: `${skill.level}%` }} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Projects */}
-        <section id="projects" ref={setRef('projects')} className="px-6 sm:px-12 py-20 max-w-5xl mx-auto">
-          <SectionHeader num="03" path="~/projects" cmd="ls -la --status" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {PROJECTS.map((p) => (
-              <div key={p.name} className="rounded-lg p-5 border flex flex-col gap-3" style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
-                <div className="flex items-center justify-between gap-2">
-                  <h3 className="font-term font-semibold text-base">{p.name}</h3>
-                  <StatusBadge status={p.status} />
-                </div>
-                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{p.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {p.stack.map((tag) => (
-                    <span key={tag} className="px-2 py-0.5 rounded text-xs font-term border" style={{ borderColor: 'var(--border-subtle)', color: 'var(--text-muted)' }}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <p className="font-term text-xs" style={{ color: 'var(--accent-cyan)' }}>{p.metrics}</p>
-                <a href={p.href} className="inline-flex items-center gap-1.5 text-xs font-term mt-auto pt-1" style={{ color: 'var(--accent-amber)' }}>
-                  <Github size={14} /> source <ArrowUpRight size={12} />
-                </a>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Experience */}
         <section id="experience" ref={setRef('experience')} className="px-6 sm:px-12 py-20 max-w-5xl mx-auto">
-          <SectionHeader num="04" path="~/experience" cmd="git log --stat" />
+          <SectionHeader num="02" path="~/experience" cmd="git log --stat" />
           <div className="relative pl-7">
             <div className="absolute left-1 top-2 bottom-2 w-px" style={{ backgroundColor: 'var(--border-subtle)' }} />
             {EXPERIENCE.map((job, i) => (
@@ -628,9 +576,26 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Certifications */}
+        <section id="certs" ref={setRef('certs')} className="px-6 sm:px-12 py-20 max-w-5xl mx-auto">
+          <SectionHeader num="03" path="~/certs" cmd="ls badges/" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {CERTS.map((c) => (
+              <div key={c.name} className="relative rounded-lg p-4 border text-center flex flex-col items-center transition-transform hover:-translate-y-0.5" style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
+                <span className="absolute top-3 right-3 font-term text-xs" style={{ color: 'var(--accent-amber)' }}>{c.year}</span>
+                <div className="flex items-center justify-center h-12 px-3 mb-3 rounded-md bg-white">
+                  <img src={c.logo} alt={`${c.issuer} logo`} className={`${c.logoClass} w-auto`} loading="lazy" />
+                </div>
+                <p className="font-semibold text-sm mb-1 leading-snug">{c.name}</p>
+                <p className="text-xs font-term" style={{ color: 'var(--text-muted)' }}>{c.issuer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Education */}
         <section id="education" ref={setRef('education')} className="px-6 sm:px-12 py-20 max-w-5xl mx-auto">
-          <SectionHeader num="05" path="~/education" cmd="cat education.log" />
+          <SectionHeader num="04" path="~/education" cmd="cat education.log" />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {EDUCATION.map((e) => (
               <div key={e.degree} className="rounded-lg p-5 border" style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
@@ -643,18 +608,53 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Certifications */}
-        <section id="certs" ref={setRef('certs')} className="px-6 sm:px-12 py-20 max-w-5xl mx-auto">
-          <SectionHeader num="06" path="~/certs" cmd="ls badges/" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {CERTS.map((c) => (
-              <div key={c.name} className="relative rounded-lg p-4 border text-center flex flex-col items-center transition-transform hover:-translate-y-0.5" style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
-                <span className="absolute top-3 right-3 font-term text-xs" style={{ color: 'var(--accent-amber)' }}>{c.year}</span>
-                <div className="flex items-center justify-center h-12 px-3 mb-3 rounded-md bg-white">
-                  <img src={c.logo} alt={`${c.issuer} logo`} className={`${c.logoClass} w-auto`} loading="lazy" />
+        {/* Skills */}
+        <section id="skills" ref={setRef('skills')} className="px-6 sm:px-12 py-20 max-w-5xl mx-auto">
+          <SectionHeader num="05" path="~/skills" cmd="htop --filter=stack" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {SKILL_GROUPS.map((group) => (
+              <div key={group.title} className="rounded-lg p-5 border" style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
+                <p className="font-term text-xs mb-4" style={{ color: 'var(--text-muted)' }}># {group.title}</p>
+                <div className="space-y-3">
+                  {group.skills.map((skill) => (
+                    <div key={skill.name}>
+                      <div className="flex justify-between text-sm mb-1.5 font-term">
+                        <span>{skill.name}</span>
+                        <span style={{ color: 'var(--text-muted)' }}>{skill.level}%</span>
+                      </div>
+                      <div className="h-1.5 rounded-full skill-bar-track">
+                        <div className="h-1.5 rounded-full skill-bar-fill" style={{ width: `${skill.level}%` }} />
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <p className="font-semibold text-sm mb-1 leading-snug">{c.name}</p>
-                <p className="text-xs font-term" style={{ color: 'var(--text-muted)' }}>{c.issuer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Projects */}
+        <section id="projects" ref={setRef('projects')} className="px-6 sm:px-12 py-20 max-w-5xl mx-auto">
+          <SectionHeader num="06" path="~/projects" cmd="ls -la --status" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {PROJECTS.map((p) => (
+              <div key={p.name} className="rounded-lg p-5 border flex flex-col gap-3" style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="font-term font-semibold text-base">{p.name}</h3>
+                  <StatusBadge status={p.status} />
+                </div>
+                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{p.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {p.stack.map((tag) => (
+                    <span key={tag} className="px-2 py-0.5 rounded text-xs font-term border" style={{ borderColor: 'var(--border-subtle)', color: 'var(--text-muted)' }}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="font-term text-xs" style={{ color: 'var(--accent-cyan)' }}>{p.metrics}</p>
+                <a href={p.href} className="inline-flex items-center gap-1.5 text-xs font-term mt-auto pt-1" style={{ color: 'var(--accent-amber)' }}>
+                  <Github size={14} /> source <ArrowUpRight size={12} />
+                </a>
               </div>
             ))}
           </div>
