@@ -186,10 +186,10 @@ const EXPERIENCE = [
 ];
 
 const CERTS = [
-  { name: 'AWS Certified Solutions Architect — Professional', issuer: 'Amazon Web Services', year: '2024', logo: awsLogo, logoClass: 'h-5' },
-  { name: 'Certified Kubernetes Administrator (CKA)', issuer: 'CNCF', year: '2023', logo: kubernetesLogo, logoClass: 'h-9' },
-  { name: 'Terraform Associate', issuer: 'HashiCorp', year: '2022', logo: terraformLogo, logoClass: 'h-8' },
-  { name: 'Azure Administrator Associate', issuer: 'Microsoft', year: '2023', logo: azureLogo, logoClass: 'h-8' },
+  { name: 'AWS Certified Cloud Practitioner', issuer: 'Amazon Web Services', year: '2025', logo: awsLogo, logoClass: 'h-5' },
+  { name: 'Certified Kubernetes Administrator (CKA)', issuer: 'CNCF', year: '2026', logo: kubernetesLogo, logoClass: 'h-9' },
+  { name: 'Certified Kubernetes Application Developer (CKAD)', issuer: 'CNCF', year: '2026', logo: kubernetesLogo, logoClass: 'h-9' },
+  { name: 'Claude Code 101 ', issuer: 'Microsoft', year: '2023', logo: azureLogo, logoClass: 'h-8' },
 ];
 
 /* ------------------------------------------------------------------ */
