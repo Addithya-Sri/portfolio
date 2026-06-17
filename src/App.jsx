@@ -313,6 +313,7 @@ export default function Portfolio() {
           --bg-elevated: #1b2330;
           --border-subtle: #2a3344;
           --text-primary: #dce4f0;
+          --text-secondary: #aeb9ca;
           --text-muted: #7c8aa0;
           --accent-cyan: #5fd9cb;
           --accent-amber: #e8a96a;
@@ -584,20 +585,20 @@ export default function Portfolio() {
                     border: '2px solid ' + (i === 0 ? 'var(--accent-cyan)' : 'var(--border-subtle)'),
                   }}
                 />
-                <p className="font-term text-xs mb-1" style={{ color: 'var(--text-muted)' }}>
+                <p className="font-term text-sm mb-1" style={{ color: 'var(--text-muted)' }}>
                   commit {job.hash}
                   {job.branch && <span style={{ color: 'var(--accent-cyan)' }}> ({job.branch})</span>}
                 </p>
-                <h3 className="font-semibold text-base sm:text-lg">{job.role}</h3>
-                <p className="text-sm mb-2 font-term" style={{ color: 'var(--accent-amber)' }}>{job.company} · {job.period}</p>
-                <p className="font-term text-xs mb-3">
+                <h3 className="font-semibold text-xl sm:text-2xl">{job.role}</h3>
+                <p className="text-base sm:text-lg mb-2 font-term" style={{ color: 'var(--accent-amber)' }}>{job.company} · {job.period}</p>
+                <p className="font-term text-sm mb-3">
                   <span style={{ color: 'var(--accent-cyan)' }}>+{job.add}</span>{' '}
                   <span style={{ color: 'var(--accent-red)' }}>−{job.del}</span>
                 </p>
-                <ul className="space-y-1.5 text-sm" style={{ color: 'var(--text-muted)' }}>
+                <ul className="space-y-2 text-base sm:text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                   {job.bullets.map((b) => (
                     <li key={b} className="flex gap-2">
-                      <span style={{ color: 'var(--accent-cyan)' }}>›</span>{b}
+                      <span className="mt-0.5" style={{ color: 'var(--accent-cyan)' }}>›</span>{b}
                     </li>
                   ))}
                 </ul>
