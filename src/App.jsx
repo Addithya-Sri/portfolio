@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, Mail, ArrowUpRight, Download } from 'lucide-react';
+import awsLogo from './assets/logos/aws.svg';
+import kubernetesLogo from './assets/logos/kubernetes.svg';
+import terraformLogo from './assets/logos/terraform.svg';
+import azureLogo from './assets/logos/azure.svg';
 
 /* ------------------------------------------------------------------ */
 /*  CONTENT — replace everything in this block with your own details   */
@@ -182,10 +186,10 @@ const EXPERIENCE = [
 ];
 
 const CERTS = [
-  { name: 'AWS Certified Solutions Architect — Professional', issuer: 'Amazon Web Services', year: '2024', mark: 'aws', color: '#FF9900' },
-  { name: 'Certified Kubernetes Administrator (CKA)', issuer: 'CNCF', year: '2023', mark: 'k8s', color: '#326CE5' },
-  { name: 'Terraform Associate', issuer: 'HashiCorp', year: '2022', mark: 'TF', color: '#7B42BC' },
-  { name: 'Azure Administrator Associate', issuer: 'Microsoft', year: '2023', mark: 'Az', color: '#0089D6' },
+  { name: 'AWS Certified Solutions Architect — Professional', issuer: 'Amazon Web Services', year: '2024', logo: awsLogo, logoClass: 'h-5' },
+  { name: 'Certified Kubernetes Administrator (CKA)', issuer: 'CNCF', year: '2023', logo: kubernetesLogo, logoClass: 'h-9' },
+  { name: 'Terraform Associate', issuer: 'HashiCorp', year: '2022', logo: terraformLogo, logoClass: 'h-8' },
+  { name: 'Azure Administrator Associate', issuer: 'Microsoft', year: '2023', logo: azureLogo, logoClass: 'h-8' },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -609,12 +613,8 @@ export default function Portfolio() {
             {CERTS.map((c) => (
               <div key={c.name} className="relative rounded-lg p-4 border text-center flex flex-col items-center transition-transform hover:-translate-y-0.5" style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
                 <span className="absolute top-3 right-3 font-term text-xs" style={{ color: 'var(--accent-amber)' }}>{c.year}</span>
-                <div
-                  className="w-12 h-12 rounded-lg flex items-center justify-center mb-3 font-term font-bold text-sm"
-                  style={{ backgroundColor: `${c.color}1f`, color: c.color, border: `1px solid ${c.color}59` }}
-                  aria-hidden="true"
-                >
-                  {c.mark}
+                <div className="flex items-center justify-center h-12 px-3 mb-3 rounded-md bg-white">
+                  <img src={c.logo} alt={`${c.issuer} logo`} className={`${c.logoClass} w-auto`} loading="lazy" />
                 </div>
                 <p className="font-semibold text-sm mb-1 leading-snug">{c.name}</p>
                 <p className="text-xs font-term" style={{ color: 'var(--text-muted)' }}>{c.issuer}</p>
