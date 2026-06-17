@@ -196,12 +196,14 @@ const EDUCATION = [
     school: 'Hochschule Heilbronn',
     location: 'Heilbronn, Germany',
     period: 'Oct 2024 — Present',
+    grade: 'Grade: 1.8',
   },
   {
     degree: 'Bachelor of Computer Applications',
     school: 'Cambridge Institute of Technology',
     location: 'Bengaluru, India',
     period: 'Nov 2020 — Dec 2023',
+    grade: 'Grade: 85.54% (≈ 1.7 German)',
   },
 ];
 
@@ -603,6 +605,7 @@ export default function Portfolio() {
                 <h3 className="font-semibold text-base sm:text-lg mb-1 leading-snug">{e.degree}</h3>
                 <p className="text-sm font-term" style={{ color: 'var(--accent-amber)' }}>{e.school}</p>
                 <p className="text-sm font-term" style={{ color: 'var(--text-muted)' }}>{e.location}</p>
+                {e.grade && <p className="text-sm font-term mt-1" style={{ color: 'var(--accent-cyan)' }}>{e.grade}</p>}
               </div>
             ))}
           </div>
