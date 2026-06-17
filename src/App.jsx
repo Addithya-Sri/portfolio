@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, ArrowUpRight, Download } from 'lucide-react';
 import awsLogo from './assets/logos/aws.svg';
 import kubernetesLogo from './assets/logos/kubernetes.svg';
 import terraformLogo from './assets/logos/terraform.svg';
-import azureLogo from './assets/logos/azure.svg';
+import claudeLogo from './assets/logos/claude.svg';
 
 /* ------------------------------------------------------------------ */
 /*  CONTENT — replace everything in this block with your own details   */
@@ -189,7 +189,7 @@ const CERTS = [
   { name: 'AWS Certified Cloud Practitioner', issuer: 'Amazon Web Services', year: '2025', logo: awsLogo, logoClass: 'h-5' },
   { name: 'Certified Kubernetes Administrator (CKA)', issuer: 'CNCF', year: '2026', logo: kubernetesLogo, logoClass: 'h-9' },
   { name: 'Certified Kubernetes Application Developer (CKAD)', issuer: 'CNCF', year: '2026', logo: kubernetesLogo, logoClass: 'h-9' },
-  { name: 'Claude Code 101 ', issuer: 'Microsoft', year: '2023', logo: azureLogo, logoClass: 'h-8' },
+  { name: 'Claude Code 101', issuer: 'Anthropic', year: '2023', logo: claudeLogo, logoClass: 'h-8' },
 ];
 
 /* ------------------------------------------------------------------ */
