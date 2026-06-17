@@ -159,29 +159,33 @@ const EXPERIENCE = [
   {
     hash: '7b2e44d',
     branch: null,
-    role: 'DevOps Engineer',
-    company: 'Brightline Cloud',
-    period: '2021 — 2023',
-    add: 860,
-    del: 210,
+    role: 'Cloud and DevOps Engineer',
+    company: 'LueurTech Software Solutions Pvt. Ltd',
+    location: 'Bengaluru, India',
+    period: 'Oct 2023 — March 2024',
+    add: 642,
+    del: 158,
     bullets: [
-      'Built CI/CD pipelines for 15 microservices using GitHub Actions',
-      'Introduced Prometheus and Grafana monitoring, cutting incident detection time',
-      'Automated infrastructure provisioning, removing manual server setup',
+      'Designed and deployed scalable cloud infrastructure on AWS using Terraform (IAM, VPC, EC2, S3), reducing manual setup time by 40%',
+      'Implemented CI/CD pipelines using GitHub Actions, reducing deployment errors by 25% and improving release frequency',
+      'Containerized applications using Docker and orchestrated with Kubernetes, improving deployment consistency',
+      'Monitored system performance using AWS CloudWatch, maintaining 99.9% uptime for critical services',
+      'Collaborated with development teams to implement infrastructure as code (IaC) best practices',
     ],
   },
   {
     hash: '4d0c8a1',
     branch: null,
-    role: 'Systems Administrator',
-    company: 'Tessera Hosting',
-    period: '2019 — 2021',
-    add: 430,
-    del: 95,
+    role: 'Web Development Intern',
+    company: 'Oasis Infobyte',
+    location: 'Bengaluru, India',
+    period: 'Aug 2023 — Oct 2023',
+    add: 214,
+    del: 47,
     bullets: [
-      'Managed on-prem and hybrid-cloud infrastructure for 50+ clients',
-      'Wrote Bash and Python automation for backups and patching',
-      'Introduced Docker to the team’s workflow for the first time',
+      'Engineered responsive web applications using HTML, CSS, and JavaScript, improving page load speed by 25%',
+      'Integrated RESTful APIs using Node.js and Express for backend functionality',
+      'Optimized UI components resulting in 15% increase in user engagement metrics',
     ],
   },
 ];
@@ -606,7 +610,8 @@ export default function Portfolio() {
                   {job.branch && <span style={{ color: 'var(--accent-cyan)' }}> ({job.branch})</span>}
                 </p>
                 <h3 className="font-semibold text-xl sm:text-2xl">{job.role}</h3>
-                <p className="text-base sm:text-lg mb-2 font-term" style={{ color: 'var(--accent-amber)' }}>{job.company} · {job.period}</p>
+                <p className="text-base sm:text-lg mb-1 font-term" style={{ color: 'var(--accent-amber)' }}>{job.company} · {job.period}</p>
+                {job.location && <p className="text-sm mb-2 font-term" style={{ color: 'var(--text-muted)' }}>{job.location}</p>}
                 <p className="font-term text-sm mb-3">
                   <span style={{ color: 'var(--accent-cyan)' }}>+{job.add}</span>{' '}
                   <span style={{ color: 'var(--accent-red)' }}>−{job.del}</span>
