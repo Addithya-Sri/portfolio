@@ -182,10 +182,10 @@ const EXPERIENCE = [
 ];
 
 const CERTS = [
-  { name: 'AWS Certified Solutions Architect — Professional', issuer: 'Amazon Web Services', year: '2024' },
-  { name: 'Certified Kubernetes Administrator (CKA)', issuer: 'CNCF', year: '2023' },
-  { name: 'Terraform Associate', issuer: 'HashiCorp', year: '2022' },
-  { name: 'Azure Administrator Associate', issuer: 'Microsoft', year: '2023' },
+  { name: 'AWS Certified Solutions Architect — Professional', issuer: 'Amazon Web Services', year: '2024', mark: 'aws', color: '#FF9900' },
+  { name: 'Certified Kubernetes Administrator (CKA)', issuer: 'CNCF', year: '2023', mark: 'k8s', color: '#326CE5' },
+  { name: 'Terraform Associate', issuer: 'HashiCorp', year: '2022', mark: 'TF', color: '#7B42BC' },
+  { name: 'Azure Administrator Associate', issuer: 'Microsoft', year: '2023', mark: 'Az', color: '#0089D6' },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -607,8 +607,15 @@ export default function Portfolio() {
           <SectionHeader num="05" path="~/certs" cmd="ls badges/" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {CERTS.map((c) => (
-              <div key={c.name} className="rounded-lg p-4 border text-center" style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
-                <p className="font-term text-xs mb-2" style={{ color: 'var(--accent-amber)' }}>{c.year}</p>
+              <div key={c.name} className="relative rounded-lg p-4 border text-center flex flex-col items-center transition-transform hover:-translate-y-0.5" style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
+                <span className="absolute top-3 right-3 font-term text-xs" style={{ color: 'var(--accent-amber)' }}>{c.year}</span>
+                <div
+                  className="w-12 h-12 rounded-lg flex items-center justify-center mb-3 font-term font-bold text-sm"
+                  style={{ backgroundColor: `${c.color}1f`, color: c.color, border: `1px solid ${c.color}59` }}
+                  aria-hidden="true"
+                >
+                  {c.mark}
+                </div>
                 <p className="font-semibold text-sm mb-1 leading-snug">{c.name}</p>
                 <p className="text-xs font-term" style={{ color: 'var(--text-muted)' }}>{c.issuer}</p>
               </div>
