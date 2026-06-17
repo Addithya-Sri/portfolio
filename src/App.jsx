@@ -39,8 +39,9 @@ const NAV_ITEMS = [
   { id: 'skills', label: 'skills', num: 2 },
   { id: 'projects', label: 'projects', num: 3 },
   { id: 'experience', label: 'experience', num: 4 },
-  { id: 'certs', label: 'certs', num: 5 },
-  { id: 'contact', label: 'contact', num: 6 },
+  { id: 'education', label: 'education', num: 5 },
+  { id: 'certs', label: 'certs', num: 6 },
+  { id: 'contact', label: 'contact', num: 7 },
 ];
 
 const ENDPOINTS = [
@@ -182,6 +183,21 @@ const EXPERIENCE = [
       'Wrote Bash and Python automation for backups and patching',
       'Introduced Docker to the team’s workflow for the first time',
     ],
+  },
+];
+
+const EDUCATION = [
+  {
+    degree: "Master's in Software Engineering",
+    school: 'Hochschule Heilbronn',
+    location: 'Heilbronn, Germany',
+    period: 'Oct 2024 — Present',
+  },
+  {
+    degree: 'Bachelor of Computer Applications',
+    school: 'Cambridge Institute of Technology',
+    location: 'Bengaluru, India',
+    period: 'Nov 2020 — Dec 2023',
   },
 ];
 
@@ -607,9 +623,24 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Education */}
+        <section id="education" ref={setRef('education')} className="px-6 sm:px-12 py-20 max-w-5xl mx-auto">
+          <SectionHeader num="05" path="~/education" cmd="cat education.log" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {EDUCATION.map((e) => (
+              <div key={e.degree} className="rounded-lg p-5 border" style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
+                <p className="font-term text-xs mb-2" style={{ color: 'var(--accent-cyan)' }}>{e.period}</p>
+                <h3 className="font-semibold text-base sm:text-lg mb-1 leading-snug">{e.degree}</h3>
+                <p className="text-sm font-term" style={{ color: 'var(--accent-amber)' }}>{e.school}</p>
+                <p className="text-sm font-term" style={{ color: 'var(--text-muted)' }}>{e.location}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Certifications */}
         <section id="certs" ref={setRef('certs')} className="px-6 sm:px-12 py-20 max-w-5xl mx-auto">
-          <SectionHeader num="05" path="~/certs" cmd="ls badges/" />
+          <SectionHeader num="06" path="~/certs" cmd="ls badges/" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {CERTS.map((c) => (
               <div key={c.name} className="relative rounded-lg p-4 border text-center flex flex-col items-center transition-transform hover:-translate-y-0.5" style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
@@ -626,7 +657,7 @@ export default function Portfolio() {
 
         {/* Contact */}
         <section id="contact" ref={setRef('contact')} className="px-6 sm:px-12 py-20 max-w-5xl mx-auto">
-          <SectionHeader num="06" path="~/contact" cmd="cat config.yaml" />
+          <SectionHeader num="07" path="~/contact" cmd="cat config.yaml" />
           <div className="font-term text-sm sm:text-base rounded-lg p-6 border max-w-xl space-y-1" style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'var(--border-subtle)' }}>
             <p><span style={{ color: 'var(--accent-cyan)' }}>contact</span>:</p>
             <p className="pl-4"><span style={{ color: 'var(--accent-amber)' }}>email</span>: <a className="underline" href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a></p>
